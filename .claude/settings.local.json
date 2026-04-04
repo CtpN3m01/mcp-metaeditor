@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm list:*)",
+      "Bash(npx tsc:*)",
+      "Bash(timeout 5 node dist/index.js)",
+      "Bash(claude mcp:*)",
+      "mcp__mcp-metaeditor__list_mql5_files",
+      "mcp__mcp-metaeditor__read_mql5_file",
+      "mcp__mcp-metaeditor__write_mql5_file",
+      "mcp__mcp-metaeditor__compile_mql5",
+      "mcp__mcp-metaeditor__get_compile_errors",
+      "mcp__mcp-metaeditor__run_backtest",
+      "mcp__mcp-metaeditor__get_backtest_results"
+    ]
+  }
+}
