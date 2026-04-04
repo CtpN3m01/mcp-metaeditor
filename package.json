@@ -4,6 +4,9 @@
   "description": "MCP server for MetaTrader 5 MetaEditor on Linux/Wine",
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "mcp-metaeditor": "dist/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
