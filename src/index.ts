@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { validateConfig } from "./config.js";
 import { registerFileTools } from "./tools/files.js";
+import { registerCompileTools } from "./tools/compile.js";
 
 const server = new McpServer({
   name: "mcp-metaeditor",
@@ -9,6 +10,7 @@ const server = new McpServer({
 });
 
 registerFileTools(server);
+registerCompileTools(server);
 
 async function main() {
   validateConfig();
