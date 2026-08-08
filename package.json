@@ -1,7 +1,7 @@
 {
   "name": "mcp-metaeditor",
   "version": "0.1.0",
-  "description": "MCP server for MetaTrader 5 MetaEditor on Linux/Wine",
+  "description": "MCP server for MetaTrader 5 MetaEditor on Linux/Wine and Windows",
   "type": "module",
   "main": "dist/index.js",
   "bin": {

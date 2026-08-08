@@ -3,9 +3,9 @@ import { resolve, basename } from "path";
 import { existsSync } from "fs";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { runWine } from "../utils/wine.js";
+import { runExecutable } from "../utils/executor.js";
 import { resolveAndValidateMql5Path } from "../utils/paths.js";
-import { MT5_PATH, TERMINAL_EXE } from "../config.js";
+import { MT5_PATH } from "../config.js";
 
 const PERIODS: Record<string, number> = {
   M1: 1,
@@ -153,7 +153,7 @@ export function registerBacktestTools(server: McpServer): void {
 
       const startTime = Date.now();
 
-      const result = await runWine(
+      const result = await runExecutable(
         "terminal64.exe",
         ["/config:tester_mcp.ini", "/portable"],
         300000

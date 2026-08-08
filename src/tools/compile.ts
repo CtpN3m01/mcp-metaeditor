@@ -1,13 +1,12 @@
 import { existsSync } from "fs";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { runWine } from "../utils/wine.js";
+import { runExecutable } from "../utils/executor.js";
 import {
   resolveAndValidateMql5Path,
   toWindowsRelPath,
 } from "../utils/paths.js";
 import { parseCompileLog } from "../utils/log-parser.js";
-import { METAEDITOR_EXE } from "../config.js";
 
 export function registerCompileTools(server: McpServer): void {
   server.tool(
@@ -30,7 +29,7 @@ export function registerCompileTools(server: McpServer): void {
       }
 
       const winPath = toWindowsRelPath(path);
-      const result = await runWine(
+      const result = await runExecutable(
         "MetaEditor64.exe",
         [
           `/compile:${winPath}`,

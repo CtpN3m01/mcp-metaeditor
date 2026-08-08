@@ -1,6 +1,6 @@
 # mcp-metaeditor
 
-MCP server that connects Claude Code (or any MCP client) to the MetaTrader 5 MetaEditor toolchain on Linux via Wine.
+MCP server that connects Claude Code (or any MCP client) to the MetaTrader 5 MetaEditor toolchain on **Linux (via Wine)** and **Windows (native)**.
 
 It lets you automate a full MQL5 workflow:
 - browse MQL5 files,
@@ -40,26 +40,42 @@ claude mcp list
 
 ## Requirements
 
-- Linux
+### Linux
 - Wine installed and working
 - MetaTrader 5 installed inside your Wine prefix
 - Node.js 20+
 - npm
 
+### Windows
+- MetaTrader 5 installed natively
+- Node.js 20+
+- npm
+
 ## Configuration
 
-Supported environment variables:
-
-- `MT5_WINEPREFIX` (default: `~/.mt5`)
-- `MT5_PATH` (default: `~/.mt5/drive_c/Program Files/MetaTrader 5`)
-
-Example:
+### Linux
+Set environment variables before running:
 
 ```bash
 export MT5_WINEPREFIX="$HOME/.mt5"
 export MT5_PATH="$HOME/.mt5/drive_c/Program Files/MetaTrader 5"
 ```
 
+Default values:
+- `MT5_WINEPREFIX`: `~/.mt5`
+- `MT5_PATH`: `~/.mt5/drive_c/Program Files/MetaTrader 5`
+
+### Windows
+Set environment variables before running (optional - uses defaults):
+
+```powershell
+$env:MT5_PATH = "C:\Program Files\MetaTrader 5"
+```
+
+Default value:
+- `MT5_PATH`: `C:\Program Files\MetaTrader 5`
+
+### Validation
 The server validates on startup that `MT5_PATH`, `MetaEditor64.exe`, and `MQL5` exist.
 
 ## Available MCP tools
